@@ -1,0 +1,97 @@
+.topbar {
+  height: 22px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(235, 235, 235, 0.95) 50%,
+    rgba(220, 220, 220, 0.95) 100%
+  );
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 13px;
+  color: #000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 9999;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.apple-menu {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 22px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.apple-menu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  padding: 0 10px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-weight: 500;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-icon {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.menu-icon:hover {
+  opacity: 1;
+}
+
+.time {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .topbar {
+    height: 20px;
+    font-size: 11px;
+  }
+  
+  .menu-item {
+    display: none;
+  }
+  
+  .topbar-left {
+    gap: 10px;
+  }
+  
+  .topbar-right {
+    gap: 10px;
+  }
+  
+  .menu-icon {
+    width: 14px;
+    height: 14px;
+  }
+}

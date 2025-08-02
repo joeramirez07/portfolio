@@ -72,7 +72,7 @@ const BioModal = ({ isActive, onClose, onFocus }) => {
               </div>
               <div className="contact-item">
                 <Linkedin size={20} />
-                <a href="https://linkedin.com/in/joeramirez" target="_blank" rel="noopener noreferrer">
+                <a href="https://linkedin.com/in/josephramirez07" target="_blank" rel="noopener noreferrer">
                   linkedin.com/in/joeramirez
                 </a>
               </div>

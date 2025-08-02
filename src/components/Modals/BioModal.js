@@ -10,13 +10,13 @@ const BioModal = ({ isActive, onClose, onFocus }) => {
       isActive={isActive}
       onClose={onClose}
       onFocus={onFocus}
-      size={{ width: 700, height: 500 }}
+      size={{ width: 900, height: 700 }}
     >
       <div className="bio-container">
         <div className="bio-header">
           <div className="bio-image">
             <img 
-              src="https://via.placeholder.com/200x200/6e8efb/ffffff?text=Your+Photo" 
+              src="/joe-photo.jpg" 
               alt="Joe Ramirez"
             />
           </div>
@@ -53,23 +53,27 @@ const BioModal = ({ isActive, onClose, onFocus }) => {
             <div className="contact-grid">
               <div className="contact-item">
                 <Mail size={20} />
-                <span>joe.ramirez@example.com</span>
+                <span>joeramirez07@gmail.com</span>
               </div>
               <div className="contact-item">
                 <Phone size={20} />
-                <span>+1 (555) 123-4567</span>
+                <span>661-754-2322</span>
               </div>
               <div className="contact-item">
                 <MapPin size={20} />
-                <span>New York City, NY</span>
+                <span>San Francisco Bay Area</span>
               </div>
               <div className="contact-item">
                 <Github size={20} />
-                <span>github.com/joeramirez07</span>
+                <a href="https://github.com/joeramirez07" target="_blank" rel="noopener noreferrer">
+                  github.com/joeramirez07
+                </a>
               </div>
               <div className="contact-item">
                 <Linkedin size={20} />
-                <span>linkedin.com/in/joeramirez</span>
+                <a href="https://linkedin.com/in/joeramirez" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/joeramirez
+                </a>
               </div>
             </div>
           </section>

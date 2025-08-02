@@ -3,11 +3,26 @@
   background: #f0f0f0;
   border-radius: 6px 6px 0 0;
   box-shadow: 
-    0 20px 70px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(0, 0, 0, 0.2);
+    0 25px 80px rgba(0, 0, 0, 0.4),
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px);
+  animation: windowOpen 0.3s ease-out;
+}
+
+@keyframes windowOpen {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .window.active {
@@ -108,15 +123,27 @@
   overflow: auto;
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Desktop sizes */
+@media (min-width: 1024px) {
   .window {
-    position: fixed !important;
-    border-radius: 10px;
-    max-width: 90%;
+    min-width: 800px;
+    min-height: 600px;
+    max-width: 80vw;
+    max-height: 85vh;
   }
   
-  .window-header {
-    cursor: default;
+  .window.large {
+    width: 1200px;
+    height: 800px;
+  }
+}
+
+/* Tablet sizes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .window {
+    width: 90% !important;
+    max-height: 80vh;
+    left: 5% !important;
+    top: 10vh !important;
   }
 }

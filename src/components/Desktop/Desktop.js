@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DesktopIcon from '../Icons/DesktopIcon';
 import BioModal from '../Modals/BioModal';
 import ProjectsWindow from '../Windows/ProjectsWindow';
@@ -14,11 +14,21 @@ const Desktop = ({ activeWindow, setActiveWindow }) => {
   });
 
   const handleIconClick = (windowName) => {
-    setWindows(prev => ({
-      ...prev,
-      [windowName]: true
-    }));
-    setActiveWindow(windowName);
+    // Close all windows first
+    setWindows({
+      bio: false,
+      projects: false,
+      game: false
+    });
+    
+    // Small delay for smooth transition
+    setTimeout(() => {
+      setWindows(prev => ({
+        ...prev,
+        [windowName]: true
+      }));
+      setActiveWindow(windowName);
+    }, 100);
   };
 
   const handleCloseWindow = (windowName) => {
@@ -28,6 +38,24 @@ const Desktop = ({ activeWindow, setActiveWindow }) => {
     }));
     setActiveWindow(null);
   };
+
+  // Add keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'Escape') {
+        // Close all windows on Escape
+        setWindows({
+          bio: false,
+          projects: false,
+          game: false
+        });
+        setActiveWindow(null);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   const icons = [
     {

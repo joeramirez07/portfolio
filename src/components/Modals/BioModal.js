@@ -10,13 +10,14 @@ const BioModal = ({ isActive, onClose, onFocus }) => {
       isActive={isActive}
       onClose={onClose}
       onFocus={onFocus}
-      size={{ width: 900, height: 700 }}
+      size={{ width: 950, height: 750 }}
     >
       <div className="bio-container">
         <div className="bio-header">
           <div className="bio-image">
             <img 
-              src="/joe-photo.jpg" 
+              src="/joe-photo.jpg"
+              srcSet="/joe-photo.jpg"
               alt="Joe Ramirez"
             />
           </div>

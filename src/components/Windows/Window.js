@@ -17,13 +17,29 @@ const Window = ({
   const [isMinimized, setIsMinimized] = useState(false);
 
   useEffect(() => {
-    // Center window on mobile
-    if (window.innerWidth <= 768) {
-      setPosition({
-        x: (window.innerWidth - size.width) / 2,
-        y: (window.innerHeight - size.height) / 2
-      });
-    }
+    // Center window on mount and mobile
+    const centerWindow = () => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      
+      if (window.innerWidth <= 768) {
+        setPosition({
+          x: (windowWidth - size.width) / 2,
+          y: (windowHeight - size.height) / 2
+        });
+      } else {
+        // Center on desktop too
+        setPosition({
+          x: Math.max(50, (windowWidth - size.width) / 2),
+          y: Math.max(50, (windowHeight - size.height) / 2)
+        });
+      }
+    };
+    
+    centerWindow();
+    window.addEventListener('resize', centerWindow);
+    
+    return () => window.removeEventListener('resize', centerWindow);
   }, [size]);
 
   const handleMouseDown = (e) => {

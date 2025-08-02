@@ -16,13 +16,28 @@
 
 @keyframes windowOpen {
   from {
-    transform: scale(0.9);
+    transform: scale(0.9) translateY(20px);
     opacity: 0;
   }
   to {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes windowClose {
+  from {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+}
+
+.window.closing {
+  animation: windowClose 0.2s ease-out forwards;
 }
 
 .window.active {

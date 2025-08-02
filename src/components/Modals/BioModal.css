@@ -6,23 +6,33 @@
 
 .bio-header {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 30px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   border-bottom: 2px solid #e0e0e0;
+  align-items: center;
 }
 
 .bio-image {
   flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 4px solid white;
+  background-color: #f0f0f0;
 }
 
 .bio-image img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  border: 3px solid white;
+  object-position: center top; /* This will focus on the top-center where faces usually are */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .bio-intro h1 {
@@ -101,6 +111,18 @@
 .contact-item span {
   color: #555;
   font-size: 14px;
+}
+
+.contact-item a {
+  color: #555;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contact-item a:hover {
+  color: #6e8efb;
+  text-decoration: underline;
 }
 
 /* Mobile Responsive */
